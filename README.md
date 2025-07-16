@@ -7,7 +7,7 @@ My macOS dotfile repo, and others.
 cd
 
 # git clone
-git clone https://github.com/injeyhwang/.dotfiles.git
+git clone https://github.com/injeyhwang/dotfiles.git
 
 # symlink
 symlink wasn't really working correctly - fix it
