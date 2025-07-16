@@ -1,2 +1,6 @@
-# tmux dir
-/.tmux
+# misc
+.DS_Store
+
+# tmux
+/tmux/plugins/
+
