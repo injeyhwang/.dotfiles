@@ -10,7 +10,6 @@ cd
 git clone https://github.com/injeyhwang/dotfiles.git
 
 # symlink
-ln -s ~/dotfiles/.tmux .
-ln -s ~/dotfiles/.tmux.conf .
+symlink wasn't really working correctly - fix it
 ```
 
