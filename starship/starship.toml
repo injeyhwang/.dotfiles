@@ -1,5 +1,5 @@
 add_newline = true
-continuation_prompt = "[▸▹ ](bold italic mauve)"
+continuation_prompt = "[ ▸▹](bold italic peach)"
 
 # Sets user-defined palette
 # Palettes must be defined _after_ this line
@@ -35,11 +35,10 @@ crust = "#11111b"
 
 # Starship modules
 [character]
-# Note the use of Catppuccin color 'peach'
 format = "$symbol "
-success_symbol = "[▶ ](bold italic green)"
-error_symbol = "[✕ ](bold italic red)"
-vimcmd_symbol = "[◁ ](bold italic yellow)"
+success_symbol = "[ ▶](bold italic green)"
+error_symbol = "[ ✕](bold italic red)"
+vimcmd_symbol = "[ ◁](bold italic yellow)"
 
 [sudo]
 format = "[$symbol]($style)"
