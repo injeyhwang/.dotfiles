@@ -1,0 +1,37 @@
+# ╔═════════════════════════════════════════════════════════════════╗
+# ║                                                                 ║
+# ║   ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗████████╗██╗   ██╗  ║
+# ║  ██╔════╝ ██║  ██║██╔═══██╗██╔════╝╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝  ║
+# ║  ██║  ███╗███████║██║   ██║███████╗   ██║      ██║    ╚████╔╝   ║
+# ║  ██║   ██║██╔══██║██║   ██║╚════██║   ██║      ██║     ╚██╔╝    ║
+# ║  ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║      ██║      ██║     ║
+# ║   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝      ╚═╝     ║
+# ║                                                                 ║
+# ╚═════════════════════════════════════════════════════════════════╝
+
+# ===================================================================
+# General Configs
+# ===================================================================
+
+font-family="JetBrains Mono"
+font-size=14
+
+theme="catppuccin-mocha"
+
+# window configs
+window-decoration=true
+window-width=120
+window-height=40
+title="Ghostty"
+
+# Enable zsh shell integration
+shell-integration="zsh"
+
+# macOS-specific configs
+
+# Treat Option key as Alt on macOS
+macos-option-as-alt=true
+
+# Hide macOS proxy icon
+macos-titlebar-proxy-icon="hidden"
+
