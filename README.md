@@ -1,15 +1,38 @@
 # macOS dotfiles
-My macOS dotfile repo, and others.
 
-# installation
+My macOS dotfile repo for easy-peasy-lemon-squeezy dotfiles setup.
+
+## requirements
+
+Ensure you have the following installed on your system.
+
+### Stow
+
 ```bash
-# go to your home directory
-cd
+$ brew install stow
+```
 
-# git clone
-git clone https://github.com/injeyhwang/dotfiles.git
+## configurations
 
-# symlink
-symlink wasn't really working correctly - fix it
+We will be configuring the following dotfile configurations
+- mise      ➜ `~/.config/mise/config.toml`
+- neovim    ➜ `~/.config/nvim/init.lua`
+- starship  ➜ `~/.config/starship.toml`
+- tmux      ➜ `~/.config/tmux/.tmux.conf`
+- ZSH       ➜ `.zshrc`
+
+## installation
+
+First checkout the dotfiles repo in your $HOME directory using git
+
+```bash
+$ git clone https://github.com/injeyhwang/dotfiles.git
+$ cd dotfiles
+```
+
+Then use `stow` to create symlinks
+
+```bash
+$ stow .
 ```
 
