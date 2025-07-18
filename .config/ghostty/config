@@ -18,20 +18,35 @@ font-size=14
 
 theme="catppuccin-mocha"
 
-# window configs
+# Window configs
 window-decoration=true
 window-width=120
 window-height=40
-title="Ghostty"
+
+# Blank title
+title = " "
 
 # Enable zsh shell integration
 shell-integration="zsh"
 
-# macOS-specific configs
-
-# Treat Option key as Alt on macOS
-macos-option-as-alt=true
+# ===================================================================
+# macOS Configs
+# ===================================================================
 
 # Hide macOS proxy icon
 macos-titlebar-proxy-icon="hidden"
 
+# Treat Option key as Alt on macOS
+macos-option-as-alt=true
+
+# Automatically enable "Secure Input" mode
+macos-auto-secure-input=true
+macos-secure-input-indication=true
+
+# ===================================================================
+# Other Configs
+# ===================================================================
+
+# Auto-update mode. Check for updates in stable channel
+auto-update="check"
+auto-update-channel="stable"
