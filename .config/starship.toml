@@ -110,8 +110,9 @@ truncation_length = 4
 [directory.substitutions]
 "Documents" = "󰈙 "
 "Downloads" = " "
-"Music" = " "
+"Music" = "󰝚 "
 "Pictures" = " "
+"Developer" = "󰲋 "
 
 [docker_context]
 symbol = " "
