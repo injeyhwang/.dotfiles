@@ -14,12 +14,13 @@ $ brew install stow
 
 ## configurations
 
-We will be configuring the following dotfile configurations
+We will be configuring the following dotfile configurations:
+- ghostty   ➜ `~/.config/ghostty/config`
 - mise      ➜ `~/.config/mise/config.toml`
 - neovim    ➜ `~/.config/nvim/init.lua`
 - starship  ➜ `~/.config/starship.toml`
 - tmux      ➜ `~/.config/tmux/.tmux.conf`
-- ZSH       ➜ `.zshrc`
+- zsh       ➜ `.zshrc`
 
 ## installation
 
