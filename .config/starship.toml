@@ -14,7 +14,7 @@
 # ==================================================================
 
 # Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 add_newline = true
 continuation_prompt = "[ ▸▹](bold italic peach)"
