@@ -148,6 +148,9 @@ alias pip="pip3"
 # Quick navigation
 alias ..="cd .."
 
+# Reload zsh config
+alias reload="source ~/.zshrc"
+
 # Use bat for cat!
 if command -v bat &> /dev/null; then
   alias cat="bat"
