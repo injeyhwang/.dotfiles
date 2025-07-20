@@ -180,11 +180,6 @@ md() {
   cd $1
 }
 
-# Find file containing pattern e.g. ff readme: find all files containing "readme" (case-insensitive)
-ff() {
-  find . -type f -iname "*$1*"
-}
-
 # =================================================
 # Suffix Aliases
 # =================================================
