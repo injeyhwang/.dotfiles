@@ -79,6 +79,10 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#45475A \
 --color=border:#313244,label:#CDD6F4"
 
+# Use fd to generate input for fzf
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # =================================================
 # Plugin Manager
 # =================================================
@@ -155,6 +159,11 @@ else
   alias lsa="ls -ah --color=auto"
   alias ll="ls -lh --color=auto"
   alias lla="ls -lha --color=auto"
+fi
+
+# Use fd for find!
+if command -v fd &> /dev/null; then
+  alias find="fd"
 fi
 
 # Make dir then cd into it
