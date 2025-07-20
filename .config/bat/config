@@ -19,3 +19,5 @@
 # Show line numbers, Git mods, and file header (but no grid)
 --style="numbers,changes,header"
 
+# Never use pager, use default cat behavior
+--paging="never"
