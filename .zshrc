@@ -133,6 +133,7 @@ alias e="exit"
 # Confirm before overwriting and verbose output
 alias cp="cp -iv"
 alias mv="mv -iv"
+alias rm="rm -iv"
 
 # Grep with color
 alias grep="grep --color=auto"
