@@ -41,10 +41,8 @@ zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" menu no
 
 # Preview directory's content with cd
-zstyle ":fzf-tab:complete:cd:*" fzf-preview 'ls -G $realpath'
-zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview 'ls -G $realpath'
-
-# Custom fzf flags
+zstyle ":fzf-tab:complete:cd:*" fzf-preview 'eza -1a --color=always --icons=always $realpath'
+zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview 'eza -1a --color=always --icons=always $realpath'
 
 # To make fzf-tab follow FZF_DEFAULT_OPTS.
 # NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fz
@@ -124,9 +122,16 @@ alias e="exit"
 alias cp="cp -iv"
 alias mv="mv -iv"
 
-# Always use color output and human-readable sizes
-alias ls="ls -G -h"
-alias ll="ls -G -lah"
+# Use eza for ls!
+alias l="eza -1 --color=always --icons=always"
+alias ls="eza --color=always --icons=always"
+alias lsa="eza -a --color=always --icons=always"
+alias ll="eza -l --color=always --icons=always --no-user --git-repos-no-status --time-style='long-iso'"
+alias lla="eza -la --color=always --icons=always --no-user --git-repos-no-status --time-style='long-iso'"
+alias lt="eza --tree --color=always --icons=always"
+alias lta="eza -a --tree --color=always --icons=always"
+
+# Grep with color
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
