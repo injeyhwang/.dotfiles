@@ -122,15 +122,6 @@ alias e="exit"
 alias cp="cp -iv"
 alias mv="mv -iv"
 
-# Use eza for ls!
-alias l="eza -1 --color=always --icons=always"
-alias ls="eza --color=always --icons=always"
-alias lsa="eza -a --color=always --icons=always"
-alias ll="eza -l --color=always --icons=always --no-user --git-repos-no-status --time-style='long-iso'"
-alias lla="eza -la --color=always --icons=always --no-user --git-repos-no-status --time-style='long-iso'"
-alias lt="eza --tree --color=always --icons=always"
-alias lta="eza -a --tree --color=always --icons=always"
-
 # Grep with color
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
@@ -147,6 +138,23 @@ alias ..="cd .."
 # Use bat for cat!
 if command -v bat &> /dev/null; then
   alias cat="bat"
+fi
+
+# Use eza for ls!
+if command -v eza &> /dev/null; then
+  alias l="eza -1 --color=always --icons=always"
+  alias la="eza -1a --color=always --icons=always"
+  alias ls="eza --color=always --icons=always"
+  alias lsa="eza -a --color=always --icons=always"
+  alias ll="eza -l --color=always --icons=always --no-user --git-repos-no-status --time-style='long-iso'"
+  alias lla="eza -la --color=always --icons=always --no-user --git-repos-no-status --time-style='long-iso'"
+  alias lt="eza --tree --color=always --icons=always"
+  alias lta="eza -a --tree --color=always --icons=always"
+else
+  alias ls="ls -h --color=auto"
+  alias lsa="ls -ah --color=auto"
+  alias ll="ls -lh --color=auto"
+  alias lla="ls -lha --color=auto"
 fi
 
 # Make dir then cd into it
