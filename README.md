@@ -15,6 +15,8 @@ brew install stow
 ## configurations
 
 We will be creating symlinks for the following dotfile configurations:
+- bat       ➜ `~/.config/bat/config`
+- bat       ➜ `~/.config/bat/config/themes/Catppuccin\ Mocha.tmTheme`
 - ghostty   ➜ `~/.config/ghostty/config`
 - mise      ➜ `~/.config/mise/config.toml`
 - neovim    ➜ `~/.config/nvim/init.lua`
@@ -32,6 +34,7 @@ cd .dotfiles
 ```
 
 Ensure that the following directories exist so that `stow` doesn't symlink entire directories:
+- `~/.config/bat/themes`
 - `~/.config/ghostty`
 - `~/.config/mise`
 - `~/.config/nvim`
@@ -40,8 +43,17 @@ Ensure that the following directories exist so that `stow` doesn't symlink entir
 Installing `mise` and `neovim` via `brew` should create the directories for you. Manually create the rest:
 
 ```bash
-mkdir -p ~/.config/ghostty ~/.config/tmux
+mkdir -p ~/.config/bat/themes ~/.config/ghostty ~/.config/tmux
 
+```
+
+### bat - a better cat with Catppuccin!
+
+Once bat theme directory is created, update bat's binary cache and verify if Catppuccin is available:
+
+```bash
+bat cache --build
+bat --list-themes
 ```
 
 Then use `stow` to create symlinks:

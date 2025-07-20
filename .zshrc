@@ -136,6 +136,12 @@ alias nv="nvim"
 alias python="python3"
 alias pip="pip3"
 
+# Quick navigation
+alias ..="cd .."
+
+# Use bat for cat!
+alias cat="bat --paging=never"
+
 # Make dir then cd into it
 md() {
   mkdir -p $1
