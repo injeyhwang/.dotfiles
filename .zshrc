@@ -44,6 +44,14 @@ zstyle ":completion:*" menu no
 zstyle ":fzf-tab:complete:cd:*" fzf-preview 'eza -1a --color=always --icons=always $realpath'
 zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview 'eza -1a --color=always --icons=always $realpath'
 
+# Smart preview - eza for directories, bat for files
+zstyle ':fzf-tab:complete:*' fzf-preview '
+if [[ -d $realpath ]]; then
+  eza -1a --color=always --icons=always $realpath
+elif [[ -f $realpath ]]; then
+  bat --color=always --line-range=:500 $realpath
+fi'
+
 # To make fzf-tab follow FZF_DEFAULT_OPTS.
 # NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fz
 zstyle ":fzf-tab:*" use-fzf-default-opts yes
