@@ -71,7 +71,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add Postgres to system PATH
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-# FZF Catppuccin theme
+# Use Catppuccin theme for fzf
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
 --color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
@@ -145,7 +145,9 @@ alias pip="pip3"
 alias ..="cd .."
 
 # Use bat for cat!
-alias cat="bat --paging=never"
+if command -v bat &> /dev/null; then
+  alias cat="bat"
+fi
 
 # Make dir then cd into it
 md() {
