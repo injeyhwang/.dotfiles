@@ -120,6 +120,11 @@ return {
     },
     opts = {
       filesystem = {
+        filtered_items = {
+          visible = true, -- Show hidden items by default
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
         window = {
           mappings = {
             ["\\"] = "close_window",
