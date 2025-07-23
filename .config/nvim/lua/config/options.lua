@@ -74,5 +74,5 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- Modeline: code format config for this file
--- vim: ts=2 sts=2 sw=2 et
+-- Show column guide at 80 characters
+vim.o.colorcolumn = "80"

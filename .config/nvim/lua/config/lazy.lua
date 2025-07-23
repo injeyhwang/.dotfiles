@@ -18,6 +18,3 @@ end
 ---@type vim.Option
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
-
--- Modeline: code format config for this file
--- vim: ts=2 sts=2 sw=2 et

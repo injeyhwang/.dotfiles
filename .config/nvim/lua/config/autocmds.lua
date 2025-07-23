@@ -27,16 +27,17 @@ vim.api.nvim_create_autocmd({ "DirChanged", "VimEnter" }, {
 
 -- Set indentation per file type
 vim.api.nvim_create_autocmd("FileType", {
-  desc = "Set 2-space indentation for web files",
+  desc = "Set 2-space indentation for web files and Lua",
   pattern = {
+    "css",
+    "html",
     "javascript",
     "javascriptreact",
+    "json",
+    "lua",
+    "scss",
     "typescript",
     "typescriptreact",
-    "html",
-    "css",
-    "scss",
-    "json",
     "yaml",
     "yml",
   },
@@ -49,8 +50,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  desc = "Set 4-space indentation for Python",
-  pattern = { "python" },
+  desc = "Set 4-space indentation for Python and Swift",
+  pattern = { "python", "swift" },
   callback = function()
     vim.opt_local.shiftwidth = 4
     vim.opt_local.tabstop = 4
@@ -58,7 +59,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.expandtab = true
   end,
 })
-
--- Modeline: code format config for this file
--- vim: ts=2 sts=2 sw=2 et
-
