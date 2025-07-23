@@ -6,17 +6,17 @@
 -- with custom indentation settings per language.
 
 return {
-  'stevearc/conform.nvim',
-  event = { 'BufWritePre' },
-  cmd = { 'ConformInfo' },
+  "stevearc/conform.nvim",
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
   keys = {
     {
-      '<leader>f',
+      "<leader>f",
       function()
-        require('conform').format { async = true, lsp_format = 'fallback' }
+        require("conform").format({ async = true, lsp_format = "fallback" })
       end,
-      mode = '',
-      desc = '[F]ormat buffer',
+      mode = "",
+      desc = "[F]ormat buffer",
     },
   },
   opts = {
@@ -31,32 +31,33 @@ return {
       else
         return {
           timeout_ms = 500,
-          lsp_format = 'fallback',
+          lsp_format = "fallback",
         }
       end
     end,
     formatters_by_ft = {
-      lua = { 'stylua' },
+      lua = { "stylua" },
       -- Python: 4 spaces
-      python = { 'black', 'isort' },
+      python = { "black", "isort" },
       -- Web: 2 spaces
-      javascript = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      typescript = { 'prettier' },
-      typescriptreact = { 'prettier' },
-      html = { 'prettier' },
-      css = { 'prettier' },
-      scss = { 'prettier' },
-      json = { 'prettier' },
-      markdown = { 'prettier' },
+      javascript = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescript = { "prettier" },
+      typescriptreact = { "prettier" },
+      html = { "prettier" },
+      css = { "prettier" },
+      scss = { "prettier" },
+      json = { "prettier" },
+      markdown = { "prettier" },
     },
     formatters = {
       prettier = {
-        prepend_args = { '--tab-width', '2', '--use-tabs', 'false' },
+        prepend_args = { "--tab-width", "2", "--use-tabs", "false" },
       },
       black = {
-        prepend_args = { '--line-length', '88', '--indent', '4' },
+        prepend_args = { "--line-length", "88", "--indent", "4" },
       },
     },
   },
 }
+
