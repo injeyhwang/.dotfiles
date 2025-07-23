@@ -21,6 +21,7 @@ return {
       "markdown",
       "markdown_inline",
       "query",
+      "swift",
       "vim",
       "vimdoc",
     },
@@ -42,4 +43,3 @@ return {
   --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
   --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 }
-
