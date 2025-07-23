@@ -39,6 +39,3 @@ require("config.lazy") -- lazy.nvim setup
 --    :Lazy update
 --
 require("lazy").setup("plugins")
-
--- Modeline: code format config for this file
--- vim: ts=2 sts=2 sw=2 et
