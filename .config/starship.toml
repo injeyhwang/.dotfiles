@@ -107,13 +107,6 @@ read_only = " 󰌾"
 style = "bold lavender"
 truncation_length = 4
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-
 [docker_context]
 symbol = " "
 
