@@ -19,25 +19,22 @@ font-size=14
 theme="Catppuccin Mocha"
 
 # Window configs
-window-decoration=true
 window-width=120
 window-height=40
 
-# Blank title
-title = " "
-
 # Enable zsh shell integration
 shell-integration="zsh"
+shell-integration-features="title"
 
 # ===================================================================
 # macOS Configs
 # ===================================================================
 
-# Hide macOS proxy icon
-macos-titlebar-proxy-icon="hidden"
-
 # Treat Option key as Alt on macOS
 macos-option-as-alt=true
+
+# The style of the macOS titlebar
+macos-titlebar-style="tabs"
 
 # Automatically enable "Secure Input" mode
 macos-auto-secure-input=true
