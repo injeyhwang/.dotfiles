@@ -192,9 +192,6 @@ md() {
 # Open text files in nvim
 alias -s txt="nvim"
 
-# Open HTML files in Firefox
-alias -s html="firefox"
-
 # =================================================
 # Initialize Shell Integrations and Tools
 # =================================================
