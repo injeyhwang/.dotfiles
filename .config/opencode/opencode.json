@@ -5,7 +5,14 @@
     "edit": "ask",
     "read": "allow",
     "grep": "allow",
-    "ls": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "skill": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
+    "webfetch": "allow",
+    "question": "ask",
     "*": "ask"
   }
 }
