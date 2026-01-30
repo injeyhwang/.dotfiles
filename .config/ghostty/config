@@ -13,34 +13,42 @@
 # General Configs
 # ===================================================================
 
-font-family="JetBrains Mono"
-font-size=14
+# The syntax is "key = value". The whitespace around the equals
+# doesn't matter.
 
-theme="Catppuccin Mocha"
+font-family = JetBrains Mono
+font-size = 14
+
+theme = Catppuccin Mocha
 
 # Window configs
-window-width=120
-window-height=40
+window-width = 120
+window-height = 40
 
 # Enable zsh shell integration
-shell-integration="zsh"
-shell-integration-features="title"
+shell-integration = zsh
+shell-integration-features = title
 
 # ===================================================================
 # macOS Configs
 # ===================================================================
 
+# The style of the macOS titlebar.
+# Available values: native, transparent, tabs, hidden
+macos-titlebar-style = tabs
+
 # Treat Option key as Alt on macOS
-macos-option-as-alt=true
+macos-option-as-alt = true
 
 # Automatically enable "Secure Input" mode
-macos-auto-secure-input=true
-macos-secure-input-indication=true
+macos-auto-secure-input = true
+macos-secure-input-indication = true
 
 # ===================================================================
 # Other Configs
 # ===================================================================
 
 # Auto-update mode. Check for updates in stable channel
-auto-update="check"
-auto-update-channel="stable"
+auto-update = check
+auto-update-channel = stable
+
