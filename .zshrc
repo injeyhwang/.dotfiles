@@ -127,6 +127,11 @@ autoload -U compinit && compinit
 # Personal Aliases & Functions
 # =================================================
 
+# directory traversal
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 # Confirm before overwriting and verbose output
 alias cp="cp -iv"
 alias mv="mv -iv"
