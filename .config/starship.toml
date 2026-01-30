@@ -17,43 +17,35 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 add_newline = true
-continuation_prompt = "[ ▸▹](bold italic peach)"
+continuation_prompt = "[ ▸▹](bold italic orange)"
 
 # ==================================================================
-# Catppuccin Theme
+# Theme
 # ==================================================================
 
 # Sets user-defined palette
 # Palettes must be defined _after_ this line
-palette = "catppuccin_mocha"
+palette = "tokyo_night"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.tokyo_night]
+red = "#f7768e"
+orange = "#ff9e64"
+yellow = "#e0af68"
+beige = "#cfc9c2"
+green = "#9ece6a"
+teal = "#73daca"
+aqua = "#b4f9f8"
+cyan = "#2ac3de"
+sky = "#7dcfff"
+blue = "#7aa2f7"
+purple = "#bb9af7"
+white = "#c0caf5"
+silver = "#a9b1d6"
+slate = "#9aa5ce"
+graphite = "#565f89"
+charcoal = "#414868"
+navy = "#24283b"
+midnight = "#1a1b26"
 
 # ==================================================================
 # Starship modules
@@ -68,7 +60,7 @@ vimcmd_symbol = "[ ◁](bold italic yellow)"
 [sudo]
 format = "[$symbol]($style)"
 style = "bold italic bright-purple"
-symbol = "⋈┈"
+symbol = "⋈ "
 disabled = false
 
 # Nerd Font Symbols Preset
@@ -104,7 +96,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-style = "bold lavender"
+style = "bold sky"
 truncation_length = 4
 
 [docker_context]
@@ -127,7 +119,7 @@ symbol = "  "
 
 [git_branch]
 symbol = " "
-style = "bold mauve"
+style = "bold purple"
 
 [git_commit]
 tag_symbol = '  '
@@ -265,4 +257,3 @@ symbol = " "
 
 [gradle]
 symbol = " "
-
