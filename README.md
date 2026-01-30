@@ -12,12 +12,11 @@ brew install stow
 ## configurations
 We will be creating symlinks for the following dotfile configurations:
 - bat       ➜ `~/.config/bat/config`
-- bat       ➜ `~/.config/bat/config/themes/Catppuccin\ Mocha.tmTheme`
+- bat       ➜ `~/.config/bat/themes/TokyoNight.tmTheme`
 - ghostty   ➜ `~/.config/ghostty/config`
 - mise      ➜ `~/.config/mise/config.toml`
 - neovim    ➜ `~/.config/nvim/init.lua`
 - opencode  ➜ `~/.config/opencode/opencode.json`
-- tmux      ➜ `~/.config/tmux/.tmux.conf`
 - starship  ➜ `~/.config/starship.toml`
 - zsh       ➜ `~/.zshrc`
 
