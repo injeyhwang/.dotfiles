@@ -14,7 +14,7 @@
 # ===============================
 
 # Set the theme to "Catppuccin Mocha"
---theme="Catppuccin Mocha"
+--theme="TokyoNight"
 
 # Show line numbers, Git mods, and file header (but no grid)
 --style="numbers,changes,header"
