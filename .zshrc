@@ -127,10 +127,6 @@ autoload -U compinit && compinit
 # Personal Aliases & Functions
 # =================================================
 
-# Shorter clear & exit commands
-alias c="clear"
-alias e="exit"
-
 # Confirm before overwriting and verbose output
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -142,12 +138,10 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
 # Dev aliases
+alias code="opencode"
 alias nv="nvim"
 alias python="python3"
 alias pip="pip3"
-
-# Quick navigation
-alias ..="cd .."
 
 # Reload zsh config
 alias reload="source ~/.zshrc"
