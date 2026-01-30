@@ -138,8 +138,8 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
 # Dev aliases
-alias code="opencode"
 alias nv="nvim"
+alias oc="opencode"
 alias python="python3"
 alias pip="pip3"
 
