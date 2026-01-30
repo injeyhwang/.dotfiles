@@ -14,6 +14,15 @@
     "webfetch": "allow",
     "question": "ask",
     "*": "ask"
+  },
+  "agent": {
+    "review": {
+      "description": "Reviews code and recommends fixes",
+      "mode": "primary",
+      "temperature": 0.1,
+      "color": "#F7768E",
+      "prompt": "You are in code review mode. Focus on correctness, edge cases, maintainability, performance, and security. Recommend fixes and ask before making any edits."
+    }
   }
 }
 
