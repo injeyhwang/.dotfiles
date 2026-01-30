@@ -33,9 +33,6 @@ shell-integration-features="title"
 # Treat Option key as Alt on macOS
 macos-option-as-alt=true
 
-# The style of the macOS titlebar
-macos-titlebar-style="tabs"
-
 # Automatically enable "Secure Input" mode
 macos-auto-secure-input=true
 macos-secure-input-indication=true
