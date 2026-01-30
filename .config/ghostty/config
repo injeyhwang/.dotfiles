@@ -19,7 +19,7 @@
 font-family = JetBrains Mono
 font-size = 14
 
-theme = Catppuccin Mocha
+theme = TokyoNight
 
 # Window configs
 window-width = 120
