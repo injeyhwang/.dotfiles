@@ -1,5 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "theme": "tokyonight",
+  "default_agent": "plan",
+  "autoupdate": "notify",
   "permission": {
     "bash": "ask",
     "edit": "ask",
