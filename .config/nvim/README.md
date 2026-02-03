@@ -20,3 +20,4 @@ This is my personal Neovim setup based on LazyVim.
 ## Setup
 - Managed via stow from `~/.dotfiles`
 - Run `stow .` in `~/.dotfiles` to link into `~/.config/nvim`
+
