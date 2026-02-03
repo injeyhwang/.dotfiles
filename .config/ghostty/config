@@ -19,6 +19,7 @@
 # Cursor configs
 cursor-style = block
 cursor-style-blink = true
+mouse-hide-while-typing = true
 
 # Font configs
 font-family = JetBrains Mono
