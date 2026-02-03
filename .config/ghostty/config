@@ -16,9 +16,15 @@
 # The syntax is "key = value". The whitespace around the equals
 # doesn't matter.
 
+# Cursor configs
+cursor-style = block
+cursor-style-blink = true
+
+# Font configs
 font-family = JetBrains Mono
 font-size = 14
 
+# Terminal theme
 theme = TokyoNight
 
 # Window configs
@@ -27,7 +33,7 @@ window-height = 40
 
 # Enable zsh shell integration
 shell-integration = zsh
-shell-integration-features = title
+shell-integration-features = title, no-cursor
 
 # ===================================================================
 # macOS Configs
