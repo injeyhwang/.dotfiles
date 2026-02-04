@@ -1,7 +1,9 @@
 # macOS dotfiles
-My macOS dotfile repo for easy-peasy-lemon-squeezy dotfiles setup.
 
-## requirements
+My macOS dotfile repo for easy-peasy-lemon-squeezy dotfiles setup. With Tokyo Night theme!
+
+## Requirements
+
 Ensure you have the following installed on your system.
 
 ### Stow
@@ -9,8 +11,10 @@ Ensure you have the following installed on your system.
 brew install stow
 ```
 
-## configurations
+## Configurations
+
 We will be creating symlinks for the following dotfile configurations:
+
 - bat       ➜ `~/.config/bat/config`
 - bat       ➜ `~/.config/bat/themes/TokyoNight.tmTheme`
 - ghostty   ➜ `~/.config/ghostty/config`
@@ -18,9 +22,11 @@ We will be creating symlinks for the following dotfile configurations:
 - neovim    ➜ `~/.config/nvim/init.lua`
 - opencode  ➜ `~/.config/opencode/opencode.json`
 - starship  ➜ `~/.config/starship.toml`
+- tmux      ➜ `~/.config/tmux/.tmux.conf`
 - zsh       ➜ `~/.zshrc`
 
-## installation
+## The setup
+
 First checkout the dotfiles repo in your $HOME directory using git:
 
 ```bash
@@ -34,12 +40,12 @@ Ensure that the following directories exist so that `stow` doesn't symlink entir
 - `~/.config/mise`
 - `~/.config/nvim`
 - `~/.config/opencode`
+- `~/.config/tmux`
 
 Installing `mise`, `neovim`, `opencode` via `brew` should create the directories for you. Manually create the rest:
 
 ```bash
-mkdir -p ~/.config/bat/themes ~/.config/ghostty
-
+mkdir -p ~/.config/bat/themes ~/.config/ghostty ~/.config/tmux
 ```
 
 ### bat - a better cat with Tokyo Night!
@@ -50,7 +56,19 @@ bat cache --build
 bat --list-themes
 ```
 
-Then use `stow` to create symlinks:
+### tmux plugin manager
+
+Before you load in `tmux.conf`, make sure to checkout `tpm` in `./config/tmux`:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
+
+## Last step
+
+Be sure you are in root directory of this repo `~/.dotfiles`.
+
+Use `stow` to create symlinks:
 
 ```bash
 stow .
