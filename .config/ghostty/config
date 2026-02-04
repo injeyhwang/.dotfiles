@@ -43,6 +43,9 @@ shell-integration-features = title, no-cursor
 # Treat Option key as Alt on macOS
 macos-option-as-alt = true
 
+# Hide proxy icon in the macOS titlebar
+macos-titlebar-proxy-icon = hidden
+
 # Automatically enable "Secure Input" mode
 macos-auto-secure-input = true
 macos-secure-input-indication = true
