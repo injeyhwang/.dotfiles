@@ -98,26 +98,22 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Set the directory we want to store zinit and plugins
 export ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit"
 
-# Download Zinit if not installed
-if [ ! -d $ZINIT_HOME ]; then
-  echo "Installing Zinit..."
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-elif [ ! -d $ZINIT_HOME/.git ]; then
-  echo "Zinit directory exists but git repo is incomplete, re-cloning..."
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# Source and load zinit only if present (no auto-install on startup)
+if [[ -r "${ZINIT_HOME}/zinit.zsh" ]]; then
+  source "${ZINIT_HOME}/zinit.zsh"
+
+  # =================================================
+  # Plugin Loading
+  # =================================================
+  zinit light zsh-users/zsh-autosuggestions
+  zinit light zsh-users/zsh-completions
+  zinit light zsh-users/zsh-syntax-highlighting
+  zinit light Aloxaf/fzf-tab
+else
+  print -P "%F{yellow}[zsh]%f zinit not found at ${ZINIT_HOME}. Install manually:"
+  print "  mkdir -p \"${ZINIT_HOME:h}\""
+  print "  git clone https://github.com/zdharma-continuum/zinit.git \"${ZINIT_HOME}\""
 fi
-
-# Source and load zinit
-source "${ZINIT_HOME}/zinit.zsh"
-
-# =================================================
-# Plugin Loading
-# =================================================
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -U compinit && compinit
