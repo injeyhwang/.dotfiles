@@ -65,7 +65,7 @@ zstyle ":fzf-tab:*" switch-group "<" ">"
 # =================================================
 
 # Add Homebrew to system PATH + env variables
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -74,11 +74,10 @@ else
   export EDITOR='nvim'
 fi
 
-# Add ~/.local/bin to system PATH - shell can find and run installed executables without sudo
-export PATH="$HOME/.local/bin:$PATH"
-
-# Add Postgres to system PATH
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+# Add custom paths and dedupe entries on reload
+typeset -U path PATH
+path=("/opt/homebrew/opt/postgresql@16/bin" "$HOME/.local/bin" $path)
+export PATH
 
 # Use Catppuccin theme for fzf
 export FZF_DEFAULT_OPTS=" \
@@ -173,11 +172,6 @@ else
   alias lla="ls -lha --color=auto"
 fi
 
-# Use fd for find!
-if command -v fd &> /dev/null; then
-  alias find="fd"
-fi
-
 # Make dir then cd into it
 md() {
   mkdir -p "$1"
@@ -195,15 +189,17 @@ alias -s txt="nvim"
 # Initialize Shell Integrations and Tools
 # =================================================
 
+# Source 1Password plugins
+[[ -r "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
+
 # mise-en-place - universal dev environment
-eval "$(mise activate zsh)"
+(( $+commands[mise] )) && eval "$(mise activate zsh)"
 
 # fzf shell integrations - better find navigation
-eval "$(fzf --zsh)"
+(( $+commands[fzf] )) && eval "$(fzf --zsh)"
 
 # zoxide integration - better cd
-eval "$(zoxide init --cmd cd zsh)"
+(( $+commands[zoxide] )) && eval "$(zoxide init --cmd cd zsh)"
 
 # starship integration - better prompts
-eval "$(starship init zsh)"
-
+(( $+commands[starship] )) && eval "$(starship init zsh)"
