@@ -27,6 +27,7 @@ return {
         "bash",
         "html",
         "python",
+        "swift",
         "yaml",
         "lua",
       })

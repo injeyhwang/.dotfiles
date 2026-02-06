@@ -3,7 +3,19 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      servers = {},
+      servers = {
+        sourcekit = {
+          mason = false,
+          cmd = { "xcrun", "sourcekit-lsp" },
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
+      },
     },
   },
   -- Tooling
