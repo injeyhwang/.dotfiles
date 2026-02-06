@@ -28,13 +28,16 @@ font-size = 14
 # Terminal theme
 theme = TokyoNight
 
+# Blank title
+title = " "
+
 # Window configs
 window-width = 120
 window-height = 40
 
 # Enable zsh shell integration
 shell-integration = zsh
-shell-integration-features = title, no-cursor
+shell-integration-features = no-cursor
 
 # ===================================================================
 # macOS Configs
