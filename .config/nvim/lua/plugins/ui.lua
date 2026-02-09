@@ -17,8 +17,9 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      opts.options.section_separators = ""
+      opts.sections.lualine_z = {}
       opts.options.component_separators = { left = "|", right = "|" }
+      opts.options.section_separators = ""
     end,
   },
   -- Configure Trouble (diagnostics list)
