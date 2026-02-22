@@ -21,8 +21,12 @@ vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
 
+-- Disable swap files and use persistent undo instead (no more `.swp` when nvim or computer dies)
+vim.opt.swapfile = false
+
 -- Save undo history for persistent undo history
 vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo")
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
