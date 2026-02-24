@@ -37,13 +37,13 @@ map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Previous Search Re
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Previous Search Result" })
 
 -- Add undo breakpoints
-map("i", ",", ",<c-g>u")
-map("i", ".", ".<c-g>u")
-map("i", ";", ";<c-g>u")
+map("i", ",", ",<c-g>u", { desc = "Undo Breakpoint Comma" })
+map("i", ".", ".<c-g>u", { desc = "Undo Breakpoint Dot" })
+map("i", ";", ";<c-g>u", { desc = "Undo Breakpoint Semicolon" })
 
 -- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 -- Better indenting
-map("x", "<", "<gv")
-map("x", ">", ">gv")
+map("x", "<", "<gv", { desc = "Indent Left" })
+map("x", ">", ">gv", { desc = "Indent Right" })
