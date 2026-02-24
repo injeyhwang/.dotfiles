@@ -21,6 +21,9 @@ vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
 
+-- Use a single global statusline
+vim.opt.laststatus = 3
+
 -- Enable auto-write for certain commands and buffer switches
 vim.opt.autowrite = true
 
@@ -55,7 +58,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 -- Command-line completion mode
 vim.opt.wildmode = "longest:full,full"
 
--- Use 4 spaces instad of tabs by default
+-- Use 4 spaces instead of tabs by default
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
