@@ -45,6 +45,9 @@ return {
         globalstatus = vim.o.laststatus == 3,
         component_separators = "",
         section_separators = "",
+        disabled_filetypes = {
+          statusline = { "snacks_dashboard" },
+        },
         theme = {
           normal = {
             a = mode_a(colors.blue),
