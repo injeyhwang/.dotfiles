@@ -9,6 +9,9 @@ vim.g.have_nerd_font = true
 
 -- [[ Editor Options ]]
 
+-- Hide the command line until needed
+vim.opt.cmdheight = 0
+
 -- Make line numbers default
 vim.opt.number = true
 
