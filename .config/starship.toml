@@ -17,7 +17,7 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 add_newline = true
-continuation_prompt = "[ ▸▹](bold italic orange)"
+continuation_prompt = "[┈](bold orange) "
 
 # ==================================================================
 # Theme
@@ -53,14 +53,14 @@ midnight = "#1a1b26"
 
 [character]
 format = "$symbol "
-success_symbol = "[ ▶](bold italic green)"
-error_symbol = "[ ✕](bold italic red)"
-vimcmd_symbol = "[ ◁](bold italic yellow)"
+success_symbol = "[▶](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[■](bold green)"
 
 [sudo]
-format = "[$symbol]($style)"
-style = "bold italic bright-purple"
-symbol = "⋈ "
+format = "[$symbol]($style) "
+style = "bold bright-purple"
+symbol = "✶"
 disabled = false
 
 # Nerd Font Symbols Preset
