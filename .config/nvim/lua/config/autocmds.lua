@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.keymap.set("n", "q", function()
         vim.cmd("close")
         pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
-      end, { buffer = event.buf, silent = true, desc = "Quit buffer" })
+      end, { buf = event.buf, silent = true, desc = "Quit buffer" })
     end)
   end,
 })
@@ -137,6 +137,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
   group = augroup("highlight_yank"),
   callback = function()
-    vim.highlight.on_yank()
-  end
+    vim.hl.on_yank()
+  end,
 })
