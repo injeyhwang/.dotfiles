@@ -6,32 +6,50 @@ end
 
 -- Check if we need to reload the file when it changed outside of nvim
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-  desc = "Check if we need to reload the file",
+  desc = "Check for externally changed files",
   group = augroup("checktime"),
   callback = function()
-    if vim.o.buftype ~= "nofile" then
-      vim.cmd("checktime")
+    if vim.bo.buftype == "nofile" then
+      return
     end
+
+    vim.cmd("checktime")
   end,
 })
 
 -- Restore cursor to last known location when opening a file
-vim.api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufWinEnter" }, {
   desc = "Restore last cursor location",
   group = augroup("last_loc"),
   callback = function(event)
-    local exclude = { "gitcommit" }
     local buf = event.buf
-    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].config_last_loc then
+
+    if vim.bo[buf].filetype == "gitcommit" then
       return
     end
-    vim.b[buf].config_last_loc = true
+
+    if vim.b[buf].config_last_loc then
+      return
+    end
+
     local mark = vim.api.nvim_buf_get_mark(buf, '"')
-    local lcount = vim.api.nvim_buf_line_count(buf)
-    if mark[1] > 0 and mark[1] <= lcount then
-      for _, window in ipairs(vim.fn.win_findbuf(buf)) do
-        pcall(vim.api.nvim_win_set_cursor, window, mark)
+    local line_count = vim.api.nvim_buf_line_count(buf)
+
+    if mark[1] == 0 or mark[1] > line_count then
+      return
+    end
+
+    local restored = false
+
+    for _, window in ipairs(vim.fn.win_findbuf(buf)) do
+      if vim.fn.win_gettype(window) ~= "autocmd" then
+        local ok = pcall(vim.api.nvim_win_set_cursor, window, mark)
+        restored = restored or ok
       end
+    end
+
+    if restored then
+      vim.b[buf].config_last_loc = true
     end
   end,
 })
@@ -41,40 +59,39 @@ vim.api.nvim_create_autocmd("VimResized", {
   desc = "Resize splits equally when window is resized",
   group = augroup("resize_splits"),
   callback = function()
-    local current_tab = vim.fn.tabpagenr()
+    local current_tab = vim.api.nvim_get_current_tabpage()
+
     vim.cmd("tabdo wincmd =")
-    vim.cmd("tabnext " .. current_tab)
+
+    vim.api.nvim_set_current_tabpage(current_tab)
   end,
 })
 
--- Close some special buffers with "q"
+-- Close selected special buffers with "q"
 vim.api.nvim_create_autocmd("FileType", {
-  desc = "Close some filetypes with <q>",
+  desc = "Close selected filetypes with <q>",
   group = augroup("close_with_q"),
   pattern = {
-    "PlenaryTestPopup",
     "checkhealth",
-    "dbout",
     "gitsigns-blame",
-    "grug-far",
     "help",
-    "lspinfo",
-    "neotest-output",
-    "neotest-output-panel",
-    "neotest-summary",
-    "notify",
     "qf",
-    "spectre_panel",
-    "startuptime",
-    "tsplayground",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
+
     vim.schedule(function()
+      if not vim.api.nvim_buf_is_valid(event.buf) then
+        return
+      end
+
       vim.keymap.set("n", "q", function()
-        vim.cmd("close")
-        pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
-      end, { buf = event.buf, silent = true, desc = "Quit buffer" })
+        pcall(vim.cmd.close)
+
+        if vim.api.nvim_buf_is_valid(event.buf) then
+          pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
+        end
+      end, { buf = event.buf, silent = true, desc = "Close special buffer" })
     end)
   end,
 })
@@ -125,12 +142,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("auto_create_dir"),
   callback = function(event)
     local uri = vim.uri_from_bufnr(event.buf)
+
     if not vim.startswith(uri, "file:") then
       return
     end
 
     local file = vim.uri_to_fname(uri)
     file = vim.uv.fs_realpath(file) or file
+
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
