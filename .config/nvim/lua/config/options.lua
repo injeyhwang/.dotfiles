@@ -40,7 +40,6 @@ vim.opt.swapfile = false
 -- Save undo history for persistent undo history
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
-vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo")
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -54,9 +53,6 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 vim.opt.timeoutlen = 300
-
--- Better completion behavior
-vim.opt.completeopt = "menu,menuone,noselect"
 
 -- Command-line completion mode
 vim.opt.wildmode = "longest:full,full"
