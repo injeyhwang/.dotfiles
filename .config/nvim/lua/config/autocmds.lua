@@ -17,6 +17,17 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   end,
 })
 
+-- Notify when a file changes outside Neovim
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  desc = "Notify about externally changed files",
+  group = augroup("file_changed"),
+  callback = function(event)
+    local file = vim.fn.fnamemodify(event.file, ":~:.")
+
+    vim.notify(("File changed on disk: %s"):format(file), vim.log.levels.INFO)
+  end,
+})
+
 -- Restore cursor to last known location when opening a file
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufWinEnter" }, {
   desc = "Restore last cursor location",
