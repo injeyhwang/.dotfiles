@@ -5,6 +5,6 @@ return {
   opts = { style = "night" },
   config = function(_, opts)
     require("tokyonight").setup(opts)
-    vim.cmd.colorscheme "tokyonight-night"
-  end
+    vim.cmd.colorscheme("tokyonight-night")
+  end,
 }

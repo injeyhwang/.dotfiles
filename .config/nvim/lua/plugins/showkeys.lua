@@ -16,5 +16,5 @@ return {
   },
   config = function(_, opts)
     require("showkeys").setup(opts)
-  end
+  end,
 }
