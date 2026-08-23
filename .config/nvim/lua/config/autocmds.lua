@@ -124,10 +124,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   desc = "Auto create missing parent directories on save",
   group = augroup("auto_create_dir"),
   callback = function(event)
-    if event.match:match("^%w%w+:[\\/][\\/]") then
+    local uri = vim.uri_from_bufnr(event.buf)
+    if not vim.startswith(uri, "file:") then
       return
     end
-    local file = vim.uv.fs_realpath(event.match) or event.match
+
+    local file = vim.uri_to_fname(uri)
+    file = vim.uv.fs_realpath(file) or file
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
