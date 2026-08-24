@@ -11,6 +11,16 @@ Ensure you have the following installed on your system.
 brew install stow
 ```
 
+### Neovim
+
+Install Neovim and the tools that are intentionally managed outside Mason:
+
+```bash
+brew install neovim tree-sitter swiftformat swiftlint
+```
+
+The Swift configuration also requires Xcode for `sourcekit-lsp`. Mason installs LuaLS, Pyright, Ruff, StyLua, and shfmt when Neovim starts.
+
 ## Configurations
 
 We will be creating symlinks for the following dotfile configurations:
@@ -76,4 +86,3 @@ stow .
 
 > [!NOTE]
 > If you already have existing config files in `~/.config` or `~/.zshrc`, stow will warn you about conflicts. You'll need to backup and remove the existing files first before running stow.
-
