@@ -3,7 +3,6 @@
 -- Display recent keystrokes on demand
 return {
   "nvzone/showkeys",
-  event = "VeryLazy",
   cmd = "ShowkeysToggle",
   keys = {
     {
