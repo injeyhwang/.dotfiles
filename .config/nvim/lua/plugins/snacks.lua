@@ -1,3 +1,6 @@
+-- [[ Snacks ]]
+
+-- Provide the startup dashboard and interactive pickers
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -44,6 +47,5 @@ return {
       },
     },
     picker = { enabled = true },
-    quickfile = { enabled = true },
   },
 }

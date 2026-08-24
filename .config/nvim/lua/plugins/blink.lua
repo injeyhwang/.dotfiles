@@ -1,4 +1,7 @@
+-- [[ Completion ]]
+
 return {
+  -- Add Neovim and plugin APIs to Lua completion
   {
     "folke/lazydev.nvim",
     ft = "lua",
@@ -10,6 +13,8 @@ return {
       },
     },
   },
+
+  -- Configure completion behavior, sources, and presentation
   {
     "saghen/blink.cmp",
     version = "1.*",

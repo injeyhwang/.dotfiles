@@ -1,3 +1,6 @@
+-- [[ Key Display ]]
+
+-- Display recent keystrokes on demand
 return {
   "nvzone/showkeys",
   event = "VeryLazy",

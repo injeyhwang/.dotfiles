@@ -1,3 +1,6 @@
+-- [[ Colorscheme ]]
+
+-- Apply Tokyo Night during startup
 return {
   "folke/tokyonight.nvim",
   lazy = false,

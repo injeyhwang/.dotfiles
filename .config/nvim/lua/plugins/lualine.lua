@@ -1,3 +1,6 @@
+-- [[ Statusline ]]
+
+-- Display editor state, Git context, diagnostics, and file details
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -5,26 +8,29 @@ return {
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
     if vim.fn.argc(-1) > 0 then
-      -- set an empty statusline till lualine loads
+      -- Keep an empty statusline visible until Lualine loads
       vim.o.statusline = " "
     else
-      -- hide the statusline on the starter page
+      -- Hide the statusline while the dashboard starts
       vim.o.laststatus = 0
     end
   end,
+
+  -- Build a minimal statusline around the active colorscheme
   opts = function()
     local colors = require("tokyonight.colors").setup({ style = "night" })
 
-    -- themes for lualine_a section
+    -- Build colors for the active mode section
     local function mode_a(bg)
       return { bg = bg, fg = colors.black, gui = "bold" }
     end
 
-    -- themes for lualine_c section
+    -- Keep the center section on the base theme colors
     local function mode_c()
       return { fg = colors.fg, bg = colors.bg }
     end
 
+    -- Hide context-sensitive components when they are not useful
     local conditions = {
       buffer_not_empty = function()
         return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
@@ -39,8 +45,11 @@ return {
       end,
     }
 
+    -- Restore the user's statusline setting before Lualine renders
     vim.o.laststatus = vim.g.lualine_laststatus
+
     return {
+      -- Keep the statusline minimal and hide it on the dashboard
       options = {
         globalstatus = vim.o.laststatus == 3,
         component_separators = "",
@@ -79,6 +88,8 @@ return {
           },
         },
       },
+
+      -- Show Git, diagnostics, and filename on the left with file details on the right
       sections = {
         lualine_a = { "mode" },
         lualine_b = {},
@@ -110,6 +121,7 @@ return {
             cond = conditions.buffer_not_empty,
           },
           {
+            -- Push the remaining components to the right
             function()
               return "%="
             end,

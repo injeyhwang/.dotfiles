@@ -1,9 +1,14 @@
+-- [[ Keymaps ]]
+
+-- Discover keymaps by prefix and editor context
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts_extend = { "spec" },
   opts = {
     preset = "helix",
+
+    -- Register common prefix groups and dynamic editor targets
     spec = {
       {
         mode = { "n", "x" },
@@ -20,6 +25,8 @@ return {
         { "]", group = "next" },
         { "g", group = "goto" },
         { "z", group = "fold" },
+
+        -- Expand buffer and window groups from the current editor state
         {
           "<leader>b",
           group = "buffers",
@@ -38,6 +45,8 @@ return {
       },
     },
   },
+
+  -- Show buffer-local mappings or loop through window commands
   keys = {
     {
       "<leader>?",
