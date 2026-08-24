@@ -40,9 +40,6 @@ return {
           return vim.o.columns > min_w
         end
       end,
-      in_git_repo = function()
-        return vim.b.gitsigns_head ~= nil
-      end,
     }
 
     -- Restore the user's statusline setting before Lualine renders
@@ -98,7 +95,6 @@ return {
             "branch",
             icon = "",
             color = { fg = colors.fg, bg = colors.bg, gui = "bold" },
-            cond = conditions.in_git_repo,
           },
           {
             "diff",
@@ -119,12 +115,6 @@ return {
             "filename",
             path = 0,
             cond = conditions.buffer_not_empty,
-          },
-          {
-            -- Push the remaining components to the right
-            function()
-              return "%="
-            end,
           },
         },
         lualine_x = {
