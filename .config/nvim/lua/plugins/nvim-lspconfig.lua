@@ -27,6 +27,7 @@ end
 -- Add buffer-local LSP keymaps only when the client supports them
 local function setup_keymaps(client, buffer)
   local methods = vim.lsp.protocol.Methods
+  local picker = Snacks.picker
   local function map(mode, lhs, rhs, method, desc, opts)
     if method and not client:supports_method(method, buffer) then
       return
@@ -44,11 +45,11 @@ local function setup_keymaps(client, buffer)
     )
   end
 
-  map("n", "gd", vim.lsp.buf.definition, methods.textDocument_definition, "Goto Definition")
+  map("n", "gd", picker.lsp_definitions, methods.textDocument_definition, "Goto Definition")
   map(
     "n",
     "gr",
-    vim.lsp.buf.references,
+    picker.lsp_references,
     methods.textDocument_references,
     "References",
     { nowait = true }
@@ -56,28 +57,29 @@ local function setup_keymaps(client, buffer)
   map(
     "n",
     "gI",
-    vim.lsp.buf.implementation,
+    picker.lsp_implementations,
     methods.textDocument_implementation,
     "Goto Implementation"
   )
   map(
     "n",
     "gy",
-    vim.lsp.buf.type_definition,
+    picker.lsp_type_definitions,
     methods.textDocument_typeDefinition,
     "Goto Type Definition"
   )
-  map("n", "gD", vim.lsp.buf.declaration, methods.textDocument_declaration, "Goto Declaration")
+  map("n", "gD", picker.lsp_declarations, methods.textDocument_declaration, "Goto Declaration")
+  map("n", "<leader>ss", picker.lsp_symbols, methods.textDocument_documentSymbol, "LSP Symbols")
+  map(
+    "n",
+    "<leader>sS",
+    picker.lsp_workspace_symbols,
+    methods.workspace_symbol,
+    "LSP Workspace Symbols"
+  )
 
   map("n", "K", vim.lsp.buf.hover, methods.textDocument_hover, "Hover")
   map("n", "gK", vim.lsp.buf.signature_help, methods.textDocument_signatureHelp, "Signature Help")
-  map(
-    "i",
-    "<C-k>",
-    vim.lsp.buf.signature_help,
-    methods.textDocument_signatureHelp,
-    "Signature Help"
-  )
 
   map(
     { "n", "x" },
