@@ -174,6 +174,38 @@ return {
       },
     },
     explorer = { enabled = true },
-    picker = { enabled = true },
+
+    -- Keep Flash jumps scoped to picker result rows
+    picker = {
+      enabled = true,
+      win = {
+        input = {
+          keys = {
+            ["<A-s>"] = { "flash", mode = { "n", "i" } },
+            ["s"] = { "flash" },
+          },
+        },
+      },
+      actions = {
+        ---@param picker snacks.Picker
+        flash = function(picker)
+          require("flash").jump({
+            pattern = "^",
+            label = { after = { 0, 0 } },
+            search = {
+              mode = "search",
+              exclude = {
+                function(window)
+                  return vim.bo[vim.api.nvim_win_get_buf(window)].filetype ~= "snacks_picker_list"
+                end,
+              },
+            },
+            action = function(match)
+              picker.list:view(picker.list:row2idx(match.pos[1]))
+            end,
+          })
+        end,
+      },
+    },
   },
 }
