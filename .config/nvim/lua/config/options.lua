@@ -92,6 +92,9 @@ vim.opt.breakindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- Keep sessions focused on file buffers instead of transient editor layouts
+vim.opt.sessionoptions:remove({ "blank", "help", "tabpages", "terminal", "winsize" })
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 4
 vim.opt.sidescrolloff = 8
