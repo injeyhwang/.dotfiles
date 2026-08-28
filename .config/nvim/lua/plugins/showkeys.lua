@@ -14,7 +14,7 @@ return {
   opts = {
     timeout = 3,
     maxkeys = 5,
-    position = "top-right",
+    position = "bottom-left",
   },
   config = function(_, opts)
     require("showkeys").setup(opts)
