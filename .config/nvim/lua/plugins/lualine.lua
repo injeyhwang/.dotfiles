@@ -75,7 +75,7 @@ return {
             c = mode_c(),
           },
           terminal = {
-            a = mode_a(colors.orange),
+            a = mode_a(colors.teal),
             c = mode_c(),
           },
           inactive = {
