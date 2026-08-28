@@ -207,5 +207,8 @@ return {
         end,
       },
     },
+
+    -- disable snacks indent when indent-blankline is enabled
+    indent = { enabled = false },
   },
 }
