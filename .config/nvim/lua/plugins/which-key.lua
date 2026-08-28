@@ -19,6 +19,7 @@ return {
         { "<leader>g", group = "git" },
         { "<leader>q", group = "quit/session" },
         { "<leader>s", group = "search" },
+        { "<leader>sn", group = "noice" },
         { "<leader>t", group = "test" },
         { "<leader>u", group = "ui/toggle" },
         { "<leader>x", group = "diagnostics/quickfix" },
