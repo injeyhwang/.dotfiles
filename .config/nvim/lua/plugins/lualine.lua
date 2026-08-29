@@ -115,11 +115,6 @@ return {
             sources = { "nvim_diagnostic" },
             symbols = { error = " ", warn = " ", info = " ", hint = "󰌵 " },
           },
-          {
-            "filename",
-            path = 0,
-            cond = conditions.buffer_not_empty,
-          },
         },
         lualine_x = {
           {
@@ -128,12 +123,18 @@ return {
           },
           "progress",
           "encoding",
+          {
+            "fileformat",
+            fmt = string.lower,
+            icons_enabled = false,
+          },
           "filetype",
         },
         lualine_y = {},
         lualine_z = {},
       },
       inactive_sections = {
+        -- these are to remove the defaults
         lualine_a = {},
         lualine_b = {},
         lualine_c = {},
