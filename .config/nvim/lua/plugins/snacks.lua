@@ -2,7 +2,12 @@
 
 -- Search from the current Git root, falling back to the working directory
 local function project_root()
-  return Snacks.git.get_root() or vim.uv.cwd() or "."
+  local cwd = vim.uv.cwd() or "."
+  return Snacks.git.get_root() or Snacks.git.get_root(cwd) or cwd
+end
+
+local function root_terminal()
+  Snacks.terminal(nil, { cwd = project_root() })
 end
 
 -- Provide the startup dashboard and interactive pickers
@@ -46,6 +51,30 @@ return {
         Snacks.explorer({ cwd = project_root() })
       end,
       desc = "File Explorer",
+    },
+
+    -- Open an ad-hoc shell without replacing tmux as the main run environment
+    {
+      "<leader>fT",
+      function()
+        Snacks.terminal()
+      end,
+      desc = "Terminal (cwd)",
+    },
+    {
+      "<leader>ft",
+      root_terminal,
+      desc = "Terminal (Project Root)",
+    },
+    {
+      "<C-/>",
+      root_terminal,
+      desc = "Terminal (Project Root)",
+    },
+    {
+      "<C-_>",
+      root_terminal,
+      desc = "which_key_ignore",
     },
 
     -- Find files
