@@ -87,7 +87,12 @@ return {
 
       -- Show Git, diagnostics, and filename on the left with file details on the right
       sections = {
-        lualine_a = { "mode" },
+        lualine_a = {
+          {
+            "mode",
+            icon = "",
+          },
+        },
         lualine_b = {},
         lualine_c = {
           {
