@@ -26,6 +26,7 @@ return {
         { "[", group = "prev" },
         { "]", group = "next" },
         { "g", group = "goto" },
+        { "gs", group = "surround" },
         { "z", group = "fold" },
 
         -- Expand buffer and window groups from the current editor state
