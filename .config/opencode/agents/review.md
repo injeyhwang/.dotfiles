@@ -1,12 +1,12 @@
 ---
 description: Reviews code for quality and best practices
-mode: primary
+mode: subagent
 temperature: 0.1
 color: "#F7768E"
-tools:
-  write: false
-  edit: false
-  bash: false
+permission:
+  write: deny
+  edit: deny
+  bash: deny
 ---
 
 You are in code review mode. Focus on:
