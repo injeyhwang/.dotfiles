@@ -138,6 +138,34 @@ return {
       desc = "Buffer Diagnostics",
     },
     {
+      "<leader>sh",
+      function()
+        Snacks.picker.help()
+      end,
+      desc = "Help Pages",
+    },
+    {
+      "<leader>sC",
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = "Commands",
+    },
+    {
+      "<leader>su",
+      function()
+        Snacks.picker.undo()
+      end,
+      desc = "Undo History",
+    },
+    {
+      '<leader>s"',
+      function()
+        Snacks.picker.registers()
+      end,
+      desc = "Registers",
+    },
+    {
       "<leader>sk",
       function()
         Snacks.picker.keymaps()
