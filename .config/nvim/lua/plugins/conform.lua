@@ -39,6 +39,8 @@ return {
       timeout_ms = 3000,
     },
     formatters_by_ft = {
+      json = { "prettier" },
+      jsonc = { "prettier" },
       lua = { "stylua" },
       python = { "ruff_format" },
       sh = { "shfmt" },
