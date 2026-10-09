@@ -32,7 +32,7 @@ theme = dark:TokyoNight,light:TokyoNight Day
 title = " "
 
 # Window configs
-window-width = 120
+window-width = 100
 window-height = 40
 
 # Enable zsh shell integration
