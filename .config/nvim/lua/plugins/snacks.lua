@@ -241,6 +241,7 @@ return {
       },
     },
     explorer = { enabled = true },
+    input = { enabled = true },
 
     -- Keep Flash jumps scoped to picker result rows
     picker = {
