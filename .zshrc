@@ -79,13 +79,13 @@ typeset -U path PATH
 path=("/opt/homebrew/opt/postgresql@16/bin" "$HOME/.local/bin" $path)
 export PATH
 
-# Use Catppuccin theme for fzf
+# Inherit terminal's color palette, including live theme changes
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
---color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
---color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
---color=selected-bg:#45475A \
---color=border:#313244,label:#CDD6F4"
+--color=base16,bg:-1,fg:-1,query:-1,gutter:-1 \
+--color=bg+:bright-black,fg+:bright-white,selected-bg:black \
+--color=spinner:cyan,hl:blue,hl+:blue \
+--color=header:yellow,info:magenta,pointer:cyan \
+--color=marker:magenta,prompt:blue,border:bright-black,label:-1"
 
 # Use fd to generate input for fzf
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'

@@ -17,7 +17,14 @@ return {
 
   -- Build a minimal statusline around the active colorscheme
   opts = function()
-    local colors = require("tokyonight.colors").setup({ style = "night" })
+    -- select tokyonight theme day or night
+    local function theme_colors()
+      return require("tokyonight.colors").setup({
+        style = vim.o.background == "light" and "day" or "night",
+      })
+    end
+
+    local colors = theme_colors()
 
     -- Build colors for the active mode section
     local function mode_a(bg)
@@ -53,36 +60,40 @@ return {
         disabled_filetypes = {
           statusline = { "snacks_dashboard" },
         },
-        theme = {
-          normal = {
-            a = mode_a(colors.blue),
-            c = mode_c(),
-          },
-          insert = {
-            a = mode_a(colors.green),
-            c = mode_c(),
-          },
-          command = {
-            a = mode_a(colors.yellow),
-            c = mode_c(),
-          },
-          visual = {
-            a = mode_a(colors.magenta),
-            c = mode_c(),
-          },
-          replace = {
-            a = mode_a(colors.red),
-            c = mode_c(),
-          },
-          terminal = {
-            a = mode_a(colors.teal),
-            c = mode_c(),
-          },
-          inactive = {
-            a = { bg = colors.bg, fg = colors.fg_dark },
-            c = { fg = colors.fg_dark, bg = colors.bg },
-          },
-        },
+        -- Lualine re-evaluates this on colorscheme and background changes.
+        theme = function()
+          colors = theme_colors()
+          return {
+            normal = {
+              a = mode_a(colors.blue),
+              c = mode_c(),
+            },
+            insert = {
+              a = mode_a(colors.green),
+              c = mode_c(),
+            },
+            command = {
+              a = mode_a(colors.yellow),
+              c = mode_c(),
+            },
+            visual = {
+              a = mode_a(colors.magenta),
+              c = mode_c(),
+            },
+            replace = {
+              a = mode_a(colors.red),
+              c = mode_c(),
+            },
+            terminal = {
+              a = mode_a(colors.teal),
+              c = mode_c(),
+            },
+            inactive = {
+              a = { bg = colors.bg, fg = colors.fg_dark },
+              c = { fg = colors.fg_dark, bg = colors.bg },
+            },
+          }
+        end,
       },
 
       -- Show Git, diagnostics, and filename on the left with file details on the right
@@ -98,15 +109,23 @@ return {
           {
             "branch",
             icon = "",
-            color = { fg = colors.fg, bg = colors.bg, gui = "bold" },
+            color = function()
+              return { fg = colors.fg, bg = colors.bg, gui = "bold" }
+            end,
           },
           {
             "diff",
             symbols = { added = " ", modified = " ", removed = " " },
             diff_color = {
-              added = { fg = colors.green },
-              modified = { fg = colors.orange },
-              removed = { fg = colors.red },
+              added = function()
+                return { fg = colors.green }
+              end,
+              modified = function()
+                return { fg = colors.orange }
+              end,
+              removed = function()
+                return { fg = colors.red }
+              end,
             },
             cond = conditions.screen_width(80),
           },

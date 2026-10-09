@@ -26,7 +26,8 @@ The Swift configuration also requires Xcode for `sourcekit-lsp`. Mason installs 
 We will be creating symlinks for the following dotfile configurations:
 
 - bat       ➜ `~/.config/bat/config`
-- bat       ➜ `~/.config/bat/themes/TokyoNight.tmTheme`
+- bat       ➜ `~/.config/bat/themes/tokyonight_night.tmTheme`
+- bat       ➜ `~/.config/bat/themes/tokyonight_day.tmTheme`
 - ghostty   ➜ `~/.config/ghostty/config`
 - mise      ➜ `~/.config/mise/config.toml`
 - neovim    ➜ `~/.config/nvim/init.lua`
@@ -59,7 +60,7 @@ mkdir -p ~/.config/bat/themes ~/.config/ghostty ~/.config/tmux
 ```
 
 ### bat - a better cat with Tokyo Night!
-Once bat theme directory is created, update bat's binary cache and verify if Tokyo Night is available:
+bat automatically selects `tokyonight_night` or `tokyonight_day` based on macOS appearance, including in pipelines and fzf previews. After installing the theme files, rebuild bat's binary cache and verify both themes are available:
 
 ```bash
 bat cache --build

@@ -13,9 +13,11 @@
 # General Configs
 # ===============================
 
-# Set the theme to "Catppuccin Mocha"
---theme="TokyoNight"
+# Follow macOS appearance, including piped output and fzf previews.
+# Unlike terminal detection, this does not read from the interactive terminal.
+--theme="auto:system"
+--theme-dark="tokyonight_night"
+--theme-light="tokyonight_day"
 
 # Show line numbers, Git mods, and file header (but no grid)
 --style="numbers,changes,header"
-

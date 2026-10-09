@@ -26,7 +26,7 @@ font-family = JetBrains Mono
 font-size = 14
 
 # Terminal theme
-theme = TokyoNight
+theme = dark:TokyoNight,light:TokyoNight Day
 
 # Blank title
 title = " "

@@ -17,35 +17,7 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 add_newline = true
-continuation_prompt = "[┈](bold orange) "
-
-# ==================================================================
-# Theme
-# ==================================================================
-
-# Sets user-defined palette
-# Palettes must be defined _after_ this line
-palette = "tokyo_night"
-
-[palettes.tokyo_night]
-red = "#f7768e"
-orange = "#ff9e64"
-yellow = "#e0af68"
-beige = "#cfc9c2"
-green = "#9ece6a"
-teal = "#73daca"
-aqua = "#b4f9f8"
-cyan = "#2ac3de"
-sky = "#7dcfff"
-blue = "#7aa2f7"
-purple = "#bb9af7"
-white = "#c0caf5"
-silver = "#a9b1d6"
-slate = "#9aa5ce"
-graphite = "#565f89"
-charcoal = "#414868"
-navy = "#24283b"
-midnight = "#1a1b26"
+continuation_prompt = "[┈](bold yellow) "
 
 # ==================================================================
 # Starship modules
@@ -96,7 +68,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-style = "bold sky"
+style = "bold cyan"
 truncation_length = 4
 
 [docker_context]
