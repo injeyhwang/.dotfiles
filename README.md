@@ -19,7 +19,7 @@ Install Neovim and the tools that are intentionally managed outside Mason:
 brew install neovim tree-sitter swiftformat swiftlint
 ```
 
-The Swift configuration also requires Xcode for `sourcekit-lsp`. Mason installs LuaLS, Pyright, Ruff, StyLua, and shfmt when Neovim starts.
+The Swift configuration also requires Xcode for `sourcekit-lsp`. Mason installs LuaLS, Prettier, Pyright, Ruff, StyLua, and shfmt when Neovim starts.
 
 ## Configurations
 
@@ -30,7 +30,7 @@ We will be creating symlinks for the following dotfile configurations:
 - ghostty   ➜ `~/.config/ghostty/config`
 - mise      ➜ `~/.config/mise/config.toml`
 - neovim    ➜ `~/.config/nvim/init.lua`
-- opencode  ➜ `~/.config/opencode/opencode.json`
+- opencode  ➜ `~/.config/opencode/cli.json`
 - starship  ➜ `~/.config/starship.toml`
 - tmux      ➜ `~/.config/tmux/.tmux.conf`
 - zsh       ➜ `~/.zshrc`
